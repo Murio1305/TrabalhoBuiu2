@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🌿Políticas Públicas - Desenvolvimento Rural e Urbano</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      background: #121212;
+      color: #ddd;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      padding: 80px 20px 40px;
+      min-height: 100vh;
+    }
+
+    a {
+      color: #81c784;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Retângulo decorativo */
+    .decorativo {
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      text-align: center;
+      color: #a5d6a7;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header.topo-fixo {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #1f1f1f;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      z-index: 10000;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: #a5d6a7;
+    }
+    nav.menu a {
+      margin-left: 25px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    section.hero {
+      margin-top: 80px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    section.hero h1 {
+      font-size: 36px;
+      color: #a5d6a7;
+      margin-bottom: 12px;
+    }
+    section.hero p {
+      font-size: 20px;
+      color: #ccc;
+    }
+
+    section h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #90ee90;
+      text-align: center;
+    }
+
+    .blocos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+    }
+
+    .bloco {
+      background: #1f1f1f;
+      border-radius: 12px;
+      width: 290px;
+      padding: 22px 20px 30px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.7);
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.25s;
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+    }
+    .bloco:hover {
+      background-color: #2a2a2a;
+      transform: translateY(-5px);
+    }
+    .bloco h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #a5d6a7;
+    }
+    .bloco p {
+      font-size: 16px;
+      line-height: 1.3;
+      color: #bbb;
+      flex-grow: 1;
+    }
+
+    input.modal-toggle {
+      display: none;
+    }
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(20,20,20,0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      z-index: 9999;
+      overflow-y: auto;
+    }
+    input.modal-toggle:checked + .modal {
+      display: flex;
+    }
+    .modal-content {
+      background: #2a2a2a;
+      max-width: 650px;
+      width: 100%;
+      border-radius: 14px;
+      padding: 32px 40px 40px;
+      position: relative;
+      color: #ddd;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.9);
+    }
+    label.fechar {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 32px;
+      color: #bbb;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    label.fechar:hover {
+      color: #81c784;
+    }
+    .modal-content h3 {
+      font-size: 28px;
+      margin-bottom: 22px;
+      color: #90ee90;
+    }
+    .modal-content p {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    .modal-img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 22px;
+    }
+    section.contato p {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    section.contato a {
+      font-weight: 600;
+    }
+    footer {
+      background: #1f1f1f;
+      text-align: center;
+      padding: 16px 20px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .bloco {
+        width: 100%;
+        max-width: 350px;
+      }
+      section.hero h1 {
+        font-size: 28px;
+      }
+      section.hero p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Retângulo decorativo -->
+  <div class="decorativo">
+    🌍 Desenvolvimento Sustentável: Rural e Urbano
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="topo-fixo">
+    <div class="logo">♻️ Desenvolvimento Sustentável</div>
+    <nav class="menu">
+      <a href="#funcionamento">Como Funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Políticas Públicas para o Desenvolvimento</h1>
+    <p>Promovendo equilíbrio entre áreas rurais e urbanas para um futuro sustentável.</p>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como-funciona" id="funcionamento">
+    <h2>Como Funcionam as Políticas Públicas? 🤔</h2>
+    <div class="blocos">
+
+      <input type="radio" name="modal" id="fechar" class="modal-toggle" hidden />
+
+      <input type="radio" name="modal" id="modal1" class="modal-toggle" hidden />
+      <div class="modal">
+        <div class="modal-content">
+          <label for="fechar" class="fechar">×</label>
+          <img src="img/ai-generated-8534841_1280.png" class="modal-img">
+          <h3>📃 Planejamento Participativo</h3>
+          <p>O planejamento participativo é uma abordagem essencial para a construção de políticas públicas mais inclusivas e eficazes. Ele envolve a colaboração entre governo,
+             sociedade civil e cidadãos na formulação de ações que atendam às necessidades reais da população. Esse processo fortalece a democracia, pois valoriza a escuta ativa
+              e o diálogo entre diferentes setores. Além disso, permite que as políticas sejam mais transparentes e responsáveis. Com a participação social, as decisões públicas
+               tornam-se mais legítimas e sustentáveis a longo prazo.</p>
+        </div>
+      </div>
+      <label for="modal1" class="bloco">
+        <h3>Planejamento Participativo</h3>
+        <p>A sociedade ajuda a criar políticas mais eficientes e democráticas.</p>
+      </label>
+
+      <input type="radio" name="modal" id="modal2" class="modal-toggle" hidden />
+      <div class="modal">
+        <div class="modal-content">
+          <label for="fechar" class="fechar">×</label>
+          <img src="img/countryside-6700296_1280.jpg" class="modal-img">
+          <h3>🌏 Infraestrutura Estratégica</h3>
+          <p>Investir em infraestrutura estratégica é fundamental para impulsionar o desenvolvimento econômico e social de um país. Esse tipo de infraestrutura inclui
+             obras e serviços essenciais, como transporte, energia, saneamento e comunicação. A criação de estradas, pontes e redes de abastecimento melhora a qualidade 
+             de vida e facilita o acesso a mercados e serviços. Além disso, promove a integração entre áreas urbanas e rurais, estimulando o crescimento equilibrado. O 
+             planejamento estratégico desses investimentos garante maior eficiência e retorno para a sociedade.</p>
+        </div>
+      </div>
+      <label for="modal2" class="bloco">
+        <h3>Infraestrutura Estratégica</h3>
+        <p>Investimentos que impulsionam o crescimento e qualidade de vida.</p>
+      </label>
+
+      <input type="radio" name="modal" id="modal3" class="modal-toggle" hidden />
+      <div class="modal">
+        <div class="modal-content">
+          <label for="fechar" class="fechar">×</label>
+          <img src="img/monitoring-1305045_1280.jpg" class="modal-img">
+          <h3>📷 Monitoramento e Avaliação</h3>
+          <p>O monitoramento e a avaliação são etapas indispensáveis para assegurar que as políticas públicas atinjam seus objetivos. Por meio dessas práticas,
+             é possível acompanhar a execução das ações e medir seus impactos na sociedade. Esse processo também permite identificar falhas e corrigir rotas, 
+             tornando as políticas mais eficazes e eficientes. Além disso, promove a transparência e a prestação de contas, fortalecendo a confiança da população
+              nos gestores públicos. A adoção de indicadores claros e metodologias apropriadas é essencial para um monitoramento de qualidade.</p>
+        </div>
+      </div>
+      <label for="modal3" class="bloco">
+        <h3>Monitoramento e Avaliação</h3>
+        <p>Garantem que as políticas sejam eficientes e cumpram seus objetivos.</p>
+      </label>
+
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="funcionalidades" id="beneficios">
+    <h2>Benefícios das Políticas Públicas 💹</h2>
+    <div class="blocos">
+
+      <input type="radio" name="modal" id="modal4" class="modal-toggle" hidden />
+      <div class="modal">
+        <div class="modal-content">
+          <label for="fechar" class="fechar">×</label>
+          <img src="img/inequality-4074203_1280.jpg" class="modal-img">
+          <h3>👨🏾‍🤝‍👨🏼 Redução das Desigualdades</h3>
+          <p>A redução das desigualdades sociais e econômicas é um dos principais objetivos das políticas públicas. Ela busca assegurar que todos tenham acesso aos
+             mesmos direitos e oportunidades, independentemente de sua origem ou condição social. Entre as ações mais comuns estão programas de transferência de renda,
+              acesso à educação de qualidade e serviços de saúde. Reduzir as desigualdades também contribui para a coesão social e para a diminuição da violência.
+               Políticas inclusivas são essenciais para garantir um desenvolvimento mais justo e sustentável.</p>
+        </div>
+      </div>
+      <label for="modal4" class="bloco">
+        <h3>Redução das Desigualdades</h3>
+        <p>Mais igualdade entre as comunidades urbanas e rurais.</p>
+      </label>
+
+      <input type="radio" name="modal" id="modal5" class="modal-toggle" hidden />
+      <div class="modal">
+        <div class="modal-content">
+          <label for="fechar" class="fechar">×</label>
+          <img src="img/wind-turbines-7264970_1280.jpg" class="modal-img">
+          <h3>♻️ Desenvolvimento Sustentável</h3>
+          <p>O desenvolvimento sustentável visa atender às necessidades atuais sem comprometer as gerações futuras. Ele envolve o equilíbrio entre crescimento econômico,
+             proteção ambiental e bem-estar social. As políticas públicas voltadas para a sustentabilidade promovem práticas como o uso racional dos recursos naturais, 
+             incentivo a energias renováveis e preservação da biodiversidade. Além disso, estimulam modelos de produção e consumo responsáveis, reduzindo impactos negativos
+              ao meio ambiente. A adoção de uma visão sustentável é essencial para garantir a qualidade de vida das futuras gerações.</p>
+        </div>
+      </div>
+      <label for="modal5" class="bloco">
+        <h3>Desenvolvimento Sustentável</h3>
+        <p>Equilíbrio ambiental, econômico e social a longo prazo.</p>
+      </label>
+
+      <input type="radio" name="modal" id="modal6" class="modal-toggle" hidden />
+      <div class="modal">
+        <div class="modal-content">
+          <label for="fechar" class="fechar">×</label>
+          <img src="img/team-4529717_1280.jpg" class="modal-img">
+          <h3>🌆 Fortalecimento das Comunidades</h3>
+          <p>Fortalecer as comunidades locais é um caminho importante para o desenvolvimento social e econômico sustentável. Esse fortalecimento ocorre por meio
+             de ações que promovem a autonomia, a participação e o protagonismo dos cidadãos nas decisões que afetam suas vidas. Políticas públicas eficazes incentivam
+              a criação de associações, cooperativas e outras formas de organização comunitária. Além disso, facilitam o acesso a recursos, capacitações e tecnologias
+               que impulsionam o desenvolvimento local. Comunidades fortalecidas são mais resilientes, inovadoras e capazes de construir um futuro melhor.</p>
+        </div>
+      </div>
+      <label for="modal6" class="bloco">
+        <h3>Fortalecimento das Comunidades</h3>
+        <p>Mais protagonismo para as comunidades locais nas decisões.</p>
+      </label>
+
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <h2>Fale Conosco</h2>
+    <p>📞 Entre em contato para tirar dúvidas ou enviar sugestões:</p>
+    <p>📕 Email: <a href="mailto:murilo.cage.rosa@escola.pr.gov.br">murilo.cage.rosa@escola.pr.gov.br</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Desenvolvimento Sustentável. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
+
